@@ -136,11 +136,11 @@ window.title("CICT Inventory System")
 # geomtry of window based on items in treeview
 window.geometry('600x300')
 window.resizable(False, False)
-window.resizable(False, False)
 
-# create a frame using grid
+# create frame
 frame = tk.Frame(window)
-frame.grid(row=0, column=0, sticky="nsew")
+frame.place(x=0, y=0, width=600, height=300)
+
 
 # create a menu
 menu = tk.Menu(window)
@@ -155,9 +155,9 @@ submenu.add_command(label='Delete Item' , command=deleteItem)
 submenu.add_separator()
 submenu.add_command(label='Exit', command=window.quit)
 
-# create title label
-titleLabel = tk.Label(window, text='CICT Inventory System', font=('Arial', 20))
-titleLabel.grid(row=0, column=0, sticky='nsew')
+# create title label and put on top of frame
+titleLabel = tk.Label(frame, text='CICT Inventory System', font=('Arial', 20))
+titleLabel.place(x=200, y=10)
 
 #center items to treeview
 def centerItems():
